@@ -9,7 +9,7 @@ const Home = () => {
       showsVerticalScrollIndicator={false}
       style={HomeStyle.container}>
       {/* Header component */}
-      <Header />
+      <Header isOk={true} />
       {/* Header component */}
     </ScrollView>
   );

@@ -4,7 +4,11 @@ import HeaderStyle from '../screens/styles/Header';
 import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
-const Header = () => {
+interface HeaderProps {
+  isOk?: boolean;
+}
+
+const Header = ({isOk = false}: HeaderProps) => {
   return (
     <View style={HeaderStyle.HeaderContainer}>
       <View style={[HeaderStyle.HeaderIconContainer, {flex: 4}]}>
