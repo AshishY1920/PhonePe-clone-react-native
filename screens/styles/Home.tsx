@@ -1,10 +1,9 @@
 import {StyleSheet} from 'react-native';
-import {RFValue} from 'react-native-responsive-fontsize';
 
 const HomeStyle = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#D9D9D9',
   },
 });
 
