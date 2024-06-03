@@ -1,12 +1,11 @@
 import {View, Text, ImageSourcePropType, FlatList, Image} from 'react-native';
 import React from 'react';
 import IconStyle from '../screens/styles/Icons';
-import {RFValue} from 'react-native-responsive-fontsize';
 import {TouchableOpacity} from 'react-native';
 
 interface IconProps {
   headTitle: string;
-  IconsArray: {id: string; title: string; uri: ImageSourcePropType}[];
+  IconsArray: {id: number; title: string; uri: ImageSourcePropType}[];
 }
 
 interface RenderItemProps {
@@ -33,7 +32,7 @@ const Icons = ({headTitle, IconsArray}: IconProps) => {
         showsVerticalScrollIndicator={false}
         nestedScrollEnabled={false}
         renderItem={renderItem}
-        keyExtractor={item => item.id}
+        keyExtractor={item => item.id.toString()}
       />
     </View>
   );
