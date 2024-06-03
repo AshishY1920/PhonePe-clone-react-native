@@ -10,6 +10,7 @@ import React from 'react';
 import HomeStyle from './styles/Home';
 import Header from '../components/Header';
 import Slider from '../components/Carousel';
+import Icons from '../components/Icons';
 
 const width = Dimensions.get('window').width;
 
@@ -32,6 +33,35 @@ const Header_Banner: HeaderBannerProps[] = [
   },
 ];
 
+interface IconsArrayProps {
+  id: number;
+  title: string;
+  uri: ImageSourcePropType;
+}
+
+const IconsArray: IconsArrayProps[] = [
+  {
+    id: 1,
+    title: 'To Mobile Number',
+    uri: require('../assets/icons/to-mobile-no.png'),
+  },
+  {
+    id: 2,
+    title: 'To Bank/UPI ID',
+    uri: require('../assets/icons/to-bank.png'),
+  },
+  {
+    id: 3,
+    title: 'To Self',
+    uri: require('../assets/icons/self.png'),
+  },
+  {
+    id: 4,
+    title: 'Check Balance',
+    uri: require('../assets/icons/check-balance.png'),
+  },
+];
+
 const Home = () => {
   return (
     <ScrollView
@@ -41,8 +71,16 @@ const Home = () => {
       <Header isOk={true} />
       {/* Header component */}
 
+      {/* Carousel Component */}
       <View style={{flex: 1}}>
         <Slider Header_Banner={Header_Banner} width={width} />
+      </View>
+      {/* Carousel Component */}
+
+      <View style={HomeStyle.PaddingContainer}>
+        {/* Transfer Money Component */}
+        <Icons headTitle="Transfer Money" IconsArray={IconsArray} />
+        {/* Transfer Money Component */}
       </View>
     </ScrollView>
   );

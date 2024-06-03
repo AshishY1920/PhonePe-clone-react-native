@@ -27,12 +27,12 @@ const HeaderStyle = StyleSheet.create({
     borderRadius: RFValue(10),
   },
   StaticHeader: {
-    fontFamily: 'Roboto-Bold',
+    fontFamily: 'Pangram-Bold',
     color: 'white',
     fontSize: RFPercentage(2),
   },
   Address: {
-    fontFamily: 'Roboto-Regular',
+    fontFamily: 'Pangram-Regular',
     color: '#E0E0E0',
     fontSize: RFPercentage(1.5),
   },
