@@ -2,18 +2,19 @@ import {Image, ImageSourcePropType, View} from 'react-native';
 import React from 'react';
 import Carousel from 'react-native-reanimated-carousel';
 import CarouselStyle from '../screens/styles/Carousel';
+import {RFValue} from 'react-native-responsive-fontsize';
 
 interface SliderProps {
-  width: number;
+  // width: number;
   Header_Banner: {uri: ImageSourcePropType}[];
 }
 
-const Slider = ({width, Header_Banner}: SliderProps) => {
+const Slider = ({Header_Banner}: SliderProps) => {
   return (
     <Carousel
       loop
-      width={width}
-      height={width / 2}
+      width={RFValue(320)}
+      height={RFValue(160)}
       autoPlay={true}
       data={[...new Array(Header_Banner.length).keys()]}
       //   onSnapToItem={index => setActiveIndex(index)}

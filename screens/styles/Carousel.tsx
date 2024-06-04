@@ -1,11 +1,10 @@
 import {StyleSheet} from 'react-native';
 import {RFValue} from 'react-native-responsive-fontsize';
-import {heightPercentageToDP} from 'react-native-responsive-screen';
 
 const CarouselStyle = StyleSheet.create({
   Image: {
-    height: heightPercentageToDP('23.33%'),
-    width: '100%',
+    height: RFValue(160),
+    width: RFValue(320),
     borderRadius: RFValue(10),
   },
 });

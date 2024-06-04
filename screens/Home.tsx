@@ -12,8 +12,6 @@ import Header from '../components/Header';
 import Slider from '../components/Carousel';
 import Icons from '../components/Icons';
 
-const width = Dimensions.get('window').width;
-
 interface HeaderBannerProps {
   uri: ImageSourcePropType;
 }
@@ -72,8 +70,8 @@ const Home = () => {
       {/* Header component */}
 
       {/* Reanimated Carousel Component */}
-      <View style={{flex: 1}}>
-        <Slider Header_Banner={Header_Banner} width={width} />
+      <View style={{flex: 1, margin: 'auto'}}>
+        <Slider Header_Banner={Header_Banner} />
       </View>
       {/* Reanimated Carousel Component */}
 
