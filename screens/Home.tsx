@@ -71,11 +71,11 @@ const Home = () => {
       <Header isOk={true} />
       {/* Header component */}
 
-      {/* Carousel Component */}
+      {/* Reanimated Carousel Component */}
       <View style={{flex: 1}}>
         <Slider Header_Banner={Header_Banner} width={width} />
       </View>
-      {/* Carousel Component */}
+      {/* Reanimated Carousel Component */}
 
       <View style={HomeStyle.PaddingContainer}>
         {/* Transfer Money Component */}
