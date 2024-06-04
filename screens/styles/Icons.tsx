@@ -29,12 +29,35 @@ const IconStyle = StyleSheet.create({
   Text: {
     textAlign: 'center',
     fontFamily: 'Pangram-Medium',
-    fontSize: RFPercentage(1.65),
+    fontSize: RFPercentage(1.4),
     color: '#1c1c1c',
   },
   IconImage: {
     width: RFValue(40),
     height: RFValue(40),
+  },
+  colLite: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: RFValue(10),
+  },
+  rowLite: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    borderWidth: 1,
+    paddingHorizontal: RFValue(8),
+    paddingVertical: RFValue(6),
+    borderColor: '#E0E0E0',
+    borderRadius: RFValue(5),
+  },
+  liteText: {
+    fontSize: RFPercentage(1.3),
+    color: '#1c1c1c',
+    fontFamily: 'Pangram-Regular',
   },
 });
 

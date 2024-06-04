@@ -1,6 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
-import {widthPercentageToDP} from 'react-native-responsive-screen';
+import {RFValue} from 'react-native-responsive-fontsize';
 
 const HomeStyle = StyleSheet.create({
   container: {
@@ -8,9 +7,7 @@ const HomeStyle = StyleSheet.create({
     backgroundColor: '#D9D9D9',
   },
   PaddingContainer: {
-    // paddingHorizontal: RFValue(15),
-    width: RFValue(300),
-    // width: parseFloat(RFPercentage('100%')),
+    width: RFValue(310),
     margin: 'auto',
   },
 });

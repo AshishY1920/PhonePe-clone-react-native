@@ -45,17 +45,17 @@ const IconsArray: IconsArrayProps[] = [
   },
   {
     id: 2,
-    title: 'To Bank/UPI ID',
+    title: 'To Bank/ UPI ID',
     uri: require('../assets/icons/to-bank.png'),
   },
   {
     id: 3,
-    title: 'To Self',
+    title: 'To Self Account',
     uri: require('../assets/icons/self.png'),
   },
   {
     id: 4,
-    title: 'Check Balance',
+    title: 'Check Bank Balance',
     uri: require('../assets/icons/check-balance.png'),
   },
 ];
