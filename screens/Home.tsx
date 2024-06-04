@@ -37,6 +37,7 @@ interface IconsArrayProps {
   id: number;
   title: string;
   uri: ImageSourcePropType;
+  isTransfer?: boolean;
 }
 
 const TransferMoneyArr: IconsArrayProps[] = [
@@ -71,7 +72,7 @@ const RechargePayBillsArr: IconsArrayProps[] = [
   {
     id: 2,
     title: 'DTH',
-    uri: require('../assets/icons/Frame95.png'),
+    uri: require('../assets/icons/Frame96.png'),
   },
   {
     id: 3,
@@ -83,21 +84,21 @@ const RechargePayBillsArr: IconsArrayProps[] = [
     title: 'Brand Vouchers',
     uri: require('../assets/icons/Frame99.png'),
   },
-  {
-    id: 5,
-    title: 'Rent Payment',
-    uri: require('../assets/icons/Frame92.png'),
-  },
-  {
-    id: 6,
-    title: 'Loan Repayment',
-    uri: require('../assets/icons/Frame93.png'),
-  },
-  {
-    id: 7,
-    title: 'Education',
-    uri: require('../assets/icons/Frame94.png'),
-  },
+  // {
+  //   id: 5,
+  //   title: 'Rent Payment',
+  //   uri: require('../assets/icons/Frame92.png'),
+  // },
+  // {
+  //   id: 6,
+  //   title: 'Loan Repayment',
+  //   uri: require('../assets/icons/Frame93.png'),
+  // },
+  // {
+  //   id: 7,
+  //   title: 'Education',
+  //   uri: require('../assets/icons/Frame94.png'),
+  // },
 ];
 
 const IconsArraycol: IconsArrayProps[] = [
@@ -162,6 +163,7 @@ const Home = () => {
           <Icons
             headTitle="Recharge & Pay Bills"
             IconsArray={RechargePayBillsArr}
+            isTransfer={true}
           />
           {/* Recharge & Pay Bills Component ends here */}
         </View>

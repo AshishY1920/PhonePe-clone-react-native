@@ -59,6 +59,11 @@ const IconStyle = StyleSheet.create({
     color: '#1c1c1c',
     fontFamily: 'Pangram-Regular',
   },
+  TransferIcons: {
+    width: RFValue(35),
+    height: RFValue(35),
+    resizeMode: 'contain',
+  },
 });
 
 export default IconStyle;

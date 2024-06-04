@@ -9,21 +9,33 @@ import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
 interface IconProps {
   headTitle: string;
   IconsArray: {id: number; title: string; uri: ImageSourcePropType}[];
+  isTransfer?: boolean;
 }
 
 interface RenderItemProps {
   title: string;
   uri: ImageSourcePropType;
+  // isTransfer?: boolean;
 }
 
-export const renderItem = ({item}: {item: RenderItemProps}) => (
+export const renderItem = ({
+  item,
+  isTransfer,
+}: {
+  item: RenderItemProps;
+  isTransfer?: boolean;
+}) => (
   <TouchableOpacity activeOpacity={0.8} style={IconStyle.IconCol}>
-    <Image resizeMode="cover" style={IconStyle.IconImage} source={item.uri} />
+    <Image
+      resizeMode="cover"
+      style={isTransfer ? IconStyle.TransferIcons : IconStyle.IconImage}
+      source={item.uri}
+    />
     <Text style={IconStyle.Text}>{item.title}</Text>
   </TouchableOpacity>
 );
 
-const Icons = ({headTitle, IconsArray}: IconProps) => {
+const Icons = ({headTitle, IconsArray, isTransfer = false}: IconProps) => {
   return (
     <View style={IconStyle.Container}>
       <Text style={IconStyle.Headline}>{headTitle}</Text>
@@ -34,55 +46,58 @@ const Icons = ({headTitle, IconsArray}: IconProps) => {
         scrollEnabled={false}
         showsVerticalScrollIndicator={false}
         nestedScrollEnabled={false}
-        renderItem={renderItem}
+        // renderItem={renderItem}
+        renderItem={({item}) => renderItem({item, isTransfer})}
         keyExtractor={item => item.id.toString()}
       />
 
       {/* ELite Two column Layout Starts here */}
-      <View style={IconStyle.colLite}>
-        <TouchableOpacity
-          activeOpacity={0.8}
-          style={[
-            IconStyle.rowLite,
-            {
-              flex: 2,
-              flexWrap: 'wrap',
-              justifyContent: 'flex-start',
-              gap: RFValue(3),
-            },
-          ]}>
-          <Text style={IconStyle.liteText}>UPI Lite:</Text>
-          <Text
+      {!isTransfer && (
+        <View style={IconStyle.colLite}>
+          <TouchableOpacity
+            activeOpacity={0.8}
             style={[
-              IconStyle.liteText,
+              IconStyle.rowLite,
               {
-                color: '#5F259E',
-                fontFamily: 'Pangram-Black',
-                borderBottomColor: '#5F259E',
-                borderBottomWidth: 1,
+                flex: 2,
+                flexWrap: 'wrap',
+                justifyContent: 'flex-start',
+                gap: RFValue(3),
               },
             ]}>
-            Try Now
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          activeOpacity={0.8}
-          style={[IconStyle.rowLite, {flex: 4, flexWrap: 'wrap'}]}>
-          <MaterialIcons
-            color={'#1c1c1c'}
-            size={RFPercentage(1.8)}
-            name="qr-code-scanner"
-          />
-          <Text style={IconStyle.liteText}>UPI ID: 9823981019@ybl</Text>
-          <Text>
-            <Entypo
+            <Text style={IconStyle.liteText}>UPI Lite:</Text>
+            <Text
+              style={[
+                IconStyle.liteText,
+                {
+                  color: '#5F259E',
+                  fontFamily: 'Pangram-Black',
+                  borderBottomColor: '#5F259E',
+                  borderBottomWidth: 1,
+                },
+              ]}>
+              Try Now
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            activeOpacity={0.8}
+            style={[IconStyle.rowLite, {flex: 4, flexWrap: 'wrap'}]}>
+            <MaterialIcons
               color={'#1c1c1c'}
               size={RFPercentage(1.8)}
-              name="chevron-small-right"
+              name="qr-code-scanner"
             />
-          </Text>
-        </TouchableOpacity>
-      </View>
+            <Text style={IconStyle.liteText}>UPI ID: 9823981019@ybl</Text>
+            <Text>
+              <Entypo
+                color={'#1c1c1c'}
+                size={RFPercentage(1.8)}
+                name="chevron-small-right"
+              />
+            </Text>
+          </TouchableOpacity>
+        </View>
+      )}
       {/* ELite Two column Layout ends here */}
     </View>
   );
