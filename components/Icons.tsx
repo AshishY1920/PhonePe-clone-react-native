@@ -37,6 +37,8 @@ const Icons = ({headTitle, IconsArray}: IconProps) => {
         renderItem={renderItem}
         keyExtractor={item => item.id.toString()}
       />
+
+      {/* ELite Two column Layout Starts here */}
       <View style={IconStyle.colLite}>
         <TouchableOpacity
           activeOpacity={0.8}
@@ -81,6 +83,7 @@ const Icons = ({headTitle, IconsArray}: IconProps) => {
           </Text>
         </TouchableOpacity>
       </View>
+      {/* ELite Two column Layout ends here */}
     </View>
   );
 };
