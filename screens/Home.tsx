@@ -22,7 +22,7 @@ const Header_Banner: HeaderBannerProps[] = [
     uri: require('../assets/images/1.jpg'),
   },
   {
-    uri: require('../assets/images/2.png'),
+    uri: require('../assets/images/banner1.jpg'),
   },
   {
     uri: require('../assets/images/3.png'),
@@ -146,7 +146,7 @@ const IconsArraycol: IconsArrayProps[] = [
 export const renderItem = ({item}: {item: IconsArrayProps}) => (
   <TouchableOpacity style={HomeStyle.IconCol} activeOpacity={0.8}>
     <Image resizeMode="cover" style={HomeStyle.IconImg} source={item.uri} />
-    <Text style={HomeStyle.IconTitle}>{item.title}</Text>
+    <Text style={[HomeStyle.IconTitle, {flex: 2}]}>{item.title}</Text>
   </TouchableOpacity>
 );
 

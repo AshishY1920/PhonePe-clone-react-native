@@ -100,7 +100,7 @@ const Icons = ({
           </TouchableOpacity>
           <TouchableOpacity
             activeOpacity={0.8}
-            style={[IconStyle.rowLite, {flex: 4, flexWrap: 'wrap'}]}>
+            style={[IconStyle.rowLite, {flex: 3, flexWrap: 'wrap'}]}>
             <MaterialIcons
               color={'#1c1c1c'}
               size={RFPercentage(1.8)}

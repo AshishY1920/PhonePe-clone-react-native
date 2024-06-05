@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
+import {widthPercentageToDP} from 'react-native-responsive-screen';
 
 const HomeStyle = StyleSheet.create({
   container: {
@@ -7,8 +8,9 @@ const HomeStyle = StyleSheet.create({
     backgroundColor: '#D9D9D9',
   },
   PaddingContainer: {
-    width: RFValue(310),
-    margin: 'auto',
+    // width: RFValue(310),
+    // margin: 'auto',
+    paddingHorizontal: RFValue(10),
   },
   IconRow: {
     flex: 1,
@@ -18,20 +20,20 @@ const HomeStyle = StyleSheet.create({
     gap: RFValue(10),
   },
   IconCol: {
-    width: RFValue(96),
+    width: widthPercentageToDP(29),
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    // justifyContent: 'space-between',
     gap: RFValue(8),
-    paddingHorizontal: RFValue(15),
+    paddingHorizontal: RFValue(8),
     borderRadius: RFValue(8),
     paddingVertical: RFValue(12),
     backgroundColor: '#4E84DA',
   },
   IconImg: {
-    width: RFValue(18),
-    height: RFValue(18),
+    width: RFValue(22),
+    height: RFValue(22),
   },
   IconTitle: {
     color: 'white',
