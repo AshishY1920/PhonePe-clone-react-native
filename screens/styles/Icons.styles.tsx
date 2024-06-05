@@ -12,6 +12,7 @@ const IconStyle = StyleSheet.create({
     color: '#1c1c1c',
     fontSize: RFPercentage(2.2),
     fontFamily: 'Pangram-Black',
+    flex: 4,
   },
   IconRow: {
     flex: 1,
@@ -63,6 +64,29 @@ const IconStyle = StyleSheet.create({
     width: RFValue(35),
     height: RFValue(35),
     resizeMode: 'contain',
+  },
+  HeadingContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: RFValue(5),
+  },
+  Iconbtn: {
+    backgroundColor: '#F3EDF9',
+    paddingHorizontal: RFValue(8),
+    paddingVertical: RFValue(5),
+    borderRadius: RFValue(50),
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+  },
+  btnText: {
+    fontFamily: 'Pangram-Bold',
+    fontSize: RFPercentage(1.6),
+    color: '#5F259E',
   },
 });
 

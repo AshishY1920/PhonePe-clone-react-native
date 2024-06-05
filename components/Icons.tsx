@@ -1,6 +1,6 @@
 import {View, Text, ImageSourcePropType, FlatList, Image} from 'react-native';
 import React from 'react';
-import IconStyle from '../screens/styles/Icons';
+import IconStyle from '../screens/styles/Icons.styles';
 import {TouchableOpacity} from 'react-native';
 import Entypo from 'react-native-vector-icons/Entypo';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
@@ -11,6 +11,7 @@ interface IconProps {
   IconsArray: {id: number; title: string; uri: ImageSourcePropType}[];
   isTransfer?: boolean;
   margin?: boolean;
+  showBtn?: boolean;
 }
 
 interface RenderItemProps {
@@ -25,7 +26,6 @@ export const renderItem = ({
 }: {
   item: RenderItemProps;
   isTransfer?: boolean;
-  margin?: boolean;
 }) => (
   <TouchableOpacity activeOpacity={0.8} style={IconStyle.IconCol}>
     <Image
@@ -42,6 +42,7 @@ const Icons = ({
   IconsArray,
   isTransfer = false,
   margin = false,
+  showBtn = false,
 }: IconProps) => {
   return (
     <View
@@ -49,7 +50,14 @@ const Icons = ({
         IconStyle.Container,
         {marginVertical: margin ? RFValue(15) : RFValue(0)},
       ]}>
-      <Text style={IconStyle.Headline}>{headTitle}</Text>
+      <View style={IconStyle.HeadingContainer}>
+        <Text style={IconStyle.Headline}>{headTitle}</Text>
+        {showBtn && (
+          <TouchableOpacity activeOpacity={0.8} style={IconStyle.Iconbtn}>
+            <Text style={IconStyle.btnText}>View All</Text>
+          </TouchableOpacity>
+        )}
+      </View>
       <FlatList
         columnWrapperStyle={IconStyle.IconRow}
         data={IconsArray}

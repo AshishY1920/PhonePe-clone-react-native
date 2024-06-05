@@ -1,7 +1,7 @@
 import {Image, ImageSourcePropType, View} from 'react-native';
 import React from 'react';
 import Carousel from 'react-native-reanimated-carousel';
-import CarouselStyle from '../screens/styles/Carousel';
+import CarouselStyle from '../screens/styles/Carousel.styles';
 import {RFValue} from 'react-native-responsive-fontsize';
 
 interface SliderProps {

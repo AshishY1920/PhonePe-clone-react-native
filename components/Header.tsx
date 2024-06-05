@@ -1,12 +1,8 @@
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
-import HeaderStyle from '../screens/styles/Header';
+import HeaderStyle from '../screens/styles/Header.styles';
 import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-
-// interface HeaderProps {
-//   isOk?: boolean;
-// }
 
 const Header = () => {
   return (

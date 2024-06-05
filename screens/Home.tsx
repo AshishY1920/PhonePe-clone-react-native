@@ -2,13 +2,12 @@ import {
   View,
   Text,
   ScrollView,
-  Dimensions,
   Image,
   ImageSourcePropType,
   FlatList,
 } from 'react-native';
 import React from 'react';
-import HomeStyle from './styles/Home';
+import HomeStyle from './styles/Home.styles';
 import Header from '../components/Header';
 import Slider from '../components/Carousel';
 import Icons from '../components/Icons';
@@ -39,6 +38,7 @@ interface IconsArrayProps {
   uri: ImageSourcePropType;
   isTransfer?: boolean;
   margin?: boolean;
+  showBtn?: boolean;
 }
 
 const TransferMoneyArr: IconsArrayProps[] = [
@@ -167,7 +167,11 @@ const Home = () => {
 
         <View style={HomeStyle.PaddingContainer}>
           {/* Transfer Money Component */}
-          <Icons headTitle="Transfer Money" IconsArray={TransferMoneyArr} />
+          <Icons
+            headTitle="Transfer Money"
+            IconsArray={TransferMoneyArr}
+            showBtn={false}
+          />
           {/* Transfer Money Component */}
 
           {/* 3 Icons Row starts here */}
@@ -188,6 +192,7 @@ const Home = () => {
             headTitle="Recharge & Pay Bills"
             IconsArray={RechargePayBillsArr}
             isTransfer={true}
+            showBtn={true}
           />
           {/* Recharge & Pay Bills Component ends here */}
 
@@ -197,6 +202,7 @@ const Home = () => {
             IconsArray={SponsoredLinksArr}
             isTransfer={true}
             margin={true}
+            showBtn={true}
           />
           {/* Subscription component ends here */}
         </View>
