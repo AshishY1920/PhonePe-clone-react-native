@@ -38,6 +38,7 @@ interface IconsArrayProps {
   title: string;
   uri: ImageSourcePropType;
   isTransfer?: boolean;
+  margin?: boolean;
 }
 
 const TransferMoneyArr: IconsArrayProps[] = [
@@ -99,6 +100,29 @@ const RechargePayBillsArr: IconsArrayProps[] = [
   //   title: 'Education',
   //   uri: require('../assets/icons/Frame94.png'),
   // },
+];
+
+const SponsoredLinksArr: IconsArrayProps[] = [
+  {
+    id: 1,
+    title: 'Bajaj Finserv',
+    uri: require('../assets/icons/Bajaj_Finserv.png'),
+  },
+  {
+    id: 2,
+    title: 'Kotak',
+    uri: require('../assets/icons/kotak.png'),
+  },
+  {
+    id: 3,
+    title: 'Rummy Circle',
+    uri: require('../assets/icons/card.png'),
+  },
+  {
+    id: 4,
+    title: 'Rummy Culture',
+    uri: require('../assets/icons/king.png'),
+  },
 ];
 
 const IconsArraycol: IconsArrayProps[] = [
@@ -166,6 +190,15 @@ const Home = () => {
             isTransfer={true}
           />
           {/* Recharge & Pay Bills Component ends here */}
+
+          {/* Subscription Component starts here */}
+          <Icons
+            headTitle="Subscription"
+            IconsArray={SponsoredLinksArr}
+            isTransfer={true}
+            margin={true}
+          />
+          {/* Subscription component ends here */}
         </View>
       </ScrollView>
     </>

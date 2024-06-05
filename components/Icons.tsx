@@ -10,6 +10,7 @@ interface IconProps {
   headTitle: string;
   IconsArray: {id: number; title: string; uri: ImageSourcePropType}[];
   isTransfer?: boolean;
+  margin?: boolean;
 }
 
 interface RenderItemProps {
@@ -24,6 +25,7 @@ export const renderItem = ({
 }: {
   item: RenderItemProps;
   isTransfer?: boolean;
+  margin?: boolean;
 }) => (
   <TouchableOpacity activeOpacity={0.8} style={IconStyle.IconCol}>
     <Image
@@ -35,9 +37,18 @@ export const renderItem = ({
   </TouchableOpacity>
 );
 
-const Icons = ({headTitle, IconsArray, isTransfer = false}: IconProps) => {
+const Icons = ({
+  headTitle,
+  IconsArray,
+  isTransfer = false,
+  margin = false,
+}: IconProps) => {
   return (
-    <View style={IconStyle.Container}>
+    <View
+      style={[
+        IconStyle.Container,
+        {marginVertical: margin ? RFValue(15) : RFValue(0)},
+      ]}>
       <Text style={IconStyle.Headline}>{headTitle}</Text>
       <FlatList
         columnWrapperStyle={IconStyle.IconRow}
